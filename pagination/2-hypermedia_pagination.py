@@ -2,7 +2,7 @@
 """
 Simple pagination
 """
-from typing import Tuple,Any
+from typing import Tuple, Any
 import csv
 import math
 from typing import List
@@ -52,21 +52,21 @@ class Server:
         except IndexError:
             return []
 
-    def get_hyper(self, page: int = 1, page_size = 10) -> dict[str, Any]:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> dict[str, Any]:
         """
-        Takes 2 arguments and returns a dictionary containing the 
+        Takes 2 arguments and returns a dictionary containing the
         following key-value pairs
         """
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
-        
+
         data = self.get_page(page, page_size)
         total_items = len(self.dataset())
         total_pages = math.ceil(total_items / page_size)
 
         prev_page = page - 1 if page > 1 else None
         next_page = page + 1 if page < total_pages else None
-        
+
         return {
             "page_size": page_size,
             "page": page,
@@ -75,6 +75,3 @@ class Server:
             "prev_page": prev_page,
             "next_page": next_page,
             "total_pages": total_pages}
-
-
-        
