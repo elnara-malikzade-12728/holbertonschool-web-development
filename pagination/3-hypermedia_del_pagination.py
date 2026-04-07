@@ -5,7 +5,7 @@ Deletion-resilient hypermedia pagination
 
 import csv
 import math
-from typing import List
+from typing import List, Dict
 
 
 class Server:
@@ -45,7 +45,7 @@ class Server:
         """
         assert index is not None and index >= 0
         assert isinstance(page_size, int) and page_size > 0
-        
+
         all_data = self.indexed_dataset()
         assert index < len(all_data)
 
