@@ -2,10 +2,9 @@
 """
 Simple pagination
 """
-from typing import Tuple, Any
+from typing import Tuple, Any, List
 import csv
 import math
-from typing import List
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
@@ -71,7 +70,6 @@ class Server:
             "page_size": page_size,
             "page": page,
             "data": data,
-            "next_page": next_page,
             "prev_page": prev_page,
             "next_page": next_page,
             "total_pages": total_pages}
