@@ -1,4 +1,6 @@
- #!/usr/bin/env python3
+#!/usr/bin/env python3
+"""Auth module
+"""
 from flask import request
 from api.v1.auth import Auth
 
