@@ -1,7 +1,6 @@
  #!/usr/bin/env python3
 from flask import request
-from api.v1.auth import Auth
-
+from typing import List, TypeVar
 
 class Auth():
     """Class for authentication
@@ -11,7 +10,7 @@ class Auth():
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """A function for choosing the right paths
         """
-        return false
+        return False
 
 
     def authorization_header(self, request=None) -> str:
@@ -22,4 +21,6 @@ class Auth():
 
     def current_user(self, request=None) -> TypeVar('User'):
         """A function for user
-        """     
+        """
+        return None
+        
