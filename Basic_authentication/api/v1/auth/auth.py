@@ -1,3 +1,4 @@
+ #!/usr/bin/env python3
 from flask import request
 from api.v1.auth import Auth
 
