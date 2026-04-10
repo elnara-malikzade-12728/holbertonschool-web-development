@@ -13,7 +13,7 @@ class BasicAuth(Auth):
         Authorization header for a Basic Authentication
         """
         if (not isinstance(authorization_header, str) or
-        authorization_header is None or
-        not authorization_header.startswith('Basic ')):
+                authorization_header is None or
+                not authorization_header.startswith('Basic ')):
             return None
         return authorization_header[6:]
