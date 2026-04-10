@@ -9,6 +9,7 @@ class Auth():
     """Class for authentication
     """
 
+ 
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """A function for choosing the right paths
         """
