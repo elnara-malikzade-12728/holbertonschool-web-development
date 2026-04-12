@@ -5,11 +5,11 @@ from flask import request
 from typing import List, TypeVar
 import os
 
+
 class Auth():
     """Class for authentication
     """
 
- 
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """A function for choosing the right paths
         """
@@ -39,5 +39,5 @@ class Auth():
             return None
 
         session_name = os.getenv('SESSION_NAME')
-        
+
         return request.cookies.get(session_name)
