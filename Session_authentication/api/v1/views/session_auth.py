@@ -32,8 +32,10 @@ def login():
     if not user.is_valid_password(password):
         return jsonify({"error": "wrong password"}), 401
 
-    from api.v1.app import auth
-    session_id = auth.create_session(user.id)
+    from api.v1.auth.session_path import SessionAuth
+    import api.v1.app as app_module
+    
+    session_id = app_module.auth.create_session(user.id)
     response = jsonify(user.to_json())
     session_name = os.getenv('SESSION_NAME')
     response.set_cookie(session_name, session_id)
