@@ -20,7 +20,7 @@ def login():
         return jsonify({"error": "password missing"}), 400
 
     from models.user import User
-    
+
     users = User.search({"email": email})
 
     if not users or len(users) == 0:
@@ -46,7 +46,7 @@ def login():
 def logout():
     """Logout function
     """
-    from api.v1.auth import auth
+    from api.v1.app import auth
 
     if not auth.destroy_session(request):
         abort(404)
