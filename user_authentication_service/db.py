@@ -48,7 +48,7 @@ class DB:
             raise NoResultFound
         return user
 
-    def update_user(self, user_id, **kwargs) -> None:
+    def update_user(self, user_id: int, **kwargs) -> None:
         """Takes as argument a required user_id integer and arbitrary
         keyword arguments, and returns None
         """
@@ -56,7 +56,7 @@ class DB:
 
         for key, value in kwargs.items():
             if not hasattr(user, key):
-                raise InvalidRequestError
+                raise InvalidRequestError()
             setattr(user, key, value)
 
         self._session.commit()
