@@ -56,7 +56,7 @@ class DB:
 
         for key, value in kwargs.items():
             if not hasattr(user, key):
-                raise InvalidRequestError()
+                raise ValueError
             setattr(user, key, value)
 
         self._session.commit()
