@@ -36,7 +36,7 @@ class DB:
         self._session.commit()
         return new_user
 
-    def find_user_by(self, **kwargs):
+    def find_user_by(self, **kwargs) -> User:
         """Takes arbitrary keyword arguments and returns the first row
         found in the users table, or None if no user is found.
         """
