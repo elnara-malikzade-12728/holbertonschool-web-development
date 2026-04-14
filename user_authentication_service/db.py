@@ -5,7 +5,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from user import User, Base
-from user import Base
 
 
 class DB:
@@ -31,6 +30,6 @@ class DB:
         """Returns a User object
         """
         new_user = User(email=email, hashed_password=hashed_password)
-        self.session.add(new_user)
-        self.session.commit()
+        self._session.add(new_user)
+        self._session.commit()
         return new_user
