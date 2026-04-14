@@ -10,6 +10,8 @@ from user import User, Base
 
 
 class DB:
+    """Database class
+    """
 
     def __init__(self):
         """Database initialization
