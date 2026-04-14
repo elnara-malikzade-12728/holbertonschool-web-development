@@ -7,7 +7,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from user import User, Base
-
+from bcrypt import hashpw
 
 class DB:
     """Database class
@@ -62,3 +62,9 @@ class DB:
             setattr(user, key, value)
 
         self._session.commit()
+
+        def _hash_password(self, password: str) -> str:
+            """A function to hash the given password and return a string 
+            """
+            hashed_bytes = hashpw(password.encode('utf-8'), gensalt())
+            return hashed_bytes.decode('utf-8')
