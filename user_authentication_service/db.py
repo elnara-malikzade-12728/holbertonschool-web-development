@@ -47,3 +47,16 @@ class DB:
         if user is None:
             raise NoResultFound
         return user
+
+    def update_user(self, user_id, **kwargs) -> None:
+        """Takes as argument a required user_id integer and arbitrary
+        keyword arguments, and returns None
+        """
+        user = self.find_user_by(id=user_id)
+
+        for key, value in kwargs.items():
+            if not hasattr(user, key):
+                raise InvalidRequestError
+            setattr(user, key, value)
+
+        self._session.commit()
