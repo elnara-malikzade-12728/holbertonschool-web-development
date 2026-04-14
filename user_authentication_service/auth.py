@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """A module for authentication
 """
+import bcrypt
 
 
 def _hash_password(self, password: str) -> str:
