@@ -5,7 +5,7 @@ import bcrypt
 
 
 def _hash_password(self, password: str) -> str:
-    """A function to hash the given password and return a string                                                          
+    """A function to hash the given password and return a string
     """
-    hashed_bytes = hashpw(password.encode('utf-8'), gensalt())
+    hashed_bytes = bcrypt.hashpw(password.encode('utf-8'), gensalt())
     return hashed_bytes.decode('utf-8')
