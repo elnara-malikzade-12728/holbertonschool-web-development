@@ -1,22 +1,41 @@
 #!/usr/bin/env python3
 """Flask module
 """
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, abort
 from auth import Auth
 
 
 app = Flask(__name__)
 AUTH = Auth()
+DB = DB()
 
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET'], strict_slashes=False)
 def home():
     """Home route
     """
     return jsonify({"message": "Bienvenue"})
 
 
-@app.route('/users', methods=['POST'])
+@pp.route('sessions', methods=['POST'], strict_slashes=False)
+def login():
+    """POST /sessions
+    Return:
+    - 401, if login info is incorrect
+    - JSON payload of the response
+    """
+    email = request.form.get("email")
+    password = request.form.get("password")
+    if not AUTH.valid_login(email, password):
+        abort(401)
+    session_id = AUTH.create_session(email)
+    response_payload = jsonify({"email": email, "message": "logged in"})
+    response = make_response(response_payload)
+    response.set_cookie("session_id", session_id)
+    return response
+
+
+@app.route('/users', methods=['POST'], strict_slashes=False)
 def users():
     """Users route
     """
