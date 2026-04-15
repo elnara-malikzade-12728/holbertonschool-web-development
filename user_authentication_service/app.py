@@ -49,7 +49,7 @@ def users():
         return jsonify({"message": "email already registered"}), 400
 
 
-@app.route('/logout', methods=['DELETE'], strict_slashes=False)
+@app.route('/sessions', methods=['DELETE'], strict_slashes=False)
 def logout():
     """DELETE /logout
     Return:
