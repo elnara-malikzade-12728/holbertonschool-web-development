@@ -39,8 +39,11 @@ class Auth:
     def valid_login(self, email: str, password: str) -> bool:
         """Takes the arguments and returns a boolean
         """
-        user = self._db.find_user_by(email=email)
-        if user and bcrypt.checkpw(password.encode('utf-8'), 
-                               user.hashed_password.encode('utf-8')):
-            return True
+        try:
+            user = self._db.find_user_by(email=email)
+            if bcrypt.checkpw(password.encode('utf-8'),
+                              user.hashed_password.encode('utf-8')):
+                return True
+        except (NoResultFound, AttributeError):
+            return False
         return False
