@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """A module for authentication
 """
+import uuid
 import bcrypt
 from db import DB
 from user import User, Base
@@ -47,3 +48,8 @@ class Auth:
         except (NoResultFound, AttributeError):
             return False
         return False
+
+    def _generate_uuid() -> str:
+        """Function returns a string representation of a new uuid
+        """
+        return str(uuid.uuid4())
