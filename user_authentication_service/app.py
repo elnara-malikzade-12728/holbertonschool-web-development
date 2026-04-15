@@ -16,7 +16,7 @@ def home():
     return jsonify({"message": "Bienvenue"})
 
 
-@pp.route('sessions', methods=['POST'], strict_slashes=False)
+@app.route('sessions', methods=['POST'], strict_slashes=False)
 def login():
     """POST /sessions
     Return:
