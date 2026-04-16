@@ -63,6 +63,21 @@ def profile():
     return jsonify({"email": user.email})
 
 
+@app.route('reset_password', methdos=['POST'], strict_slashes=False)
+def reset_password():
+    """POST /reset_password
+    Return:
+    - 403, if email is not registered
+    - 200, if email is registered
+    """
+    email = request.form.get("email")
+    try:
+        reset_token = AUTH.get_reset_password_token(email)
+    except ValueError:
+        abort(403)
+    return jsonify({"email": email, "reset_token": reset_token}), 200
+
+
 @app.route('/sessions', methods=['DELETE'], strict_slashes=False)
 def logout():
     """DELETE /logout
