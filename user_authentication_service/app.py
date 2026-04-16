@@ -63,7 +63,7 @@ def profile():
     return jsonify({"email": user.email})
 
 
-@app.route('reset_password', methdos=['POST'], strict_slashes=False)
+@app.route('reset_password', methods=['POST'], strict_slashes=False)
 def reset_password():
     """POST /reset_password
     Return:
