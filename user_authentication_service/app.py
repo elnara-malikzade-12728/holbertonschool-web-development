@@ -49,6 +49,20 @@ def users():
         return jsonify({"message": "email already registered"}), 400
 
 
+@app.route('/profile', methods=['GET'], strict_slashes=False)
+def profile():
+    """GET /profile
+    Return:
+    - 200, if user exists
+    - 403, if session_id is invalid or user doesn't exist
+    """
+    session_id = request.cookies.get("session_id")
+    user = Auth.get_user_from_session_id(session_id)
+    if user is None:
+        abort(403)
+    return jsonify({"email": user.email})
+
+
 @app.route('/sessions', methods=['DELETE'], strict_slashes=False)
 def logout():
     """DELETE /logout
