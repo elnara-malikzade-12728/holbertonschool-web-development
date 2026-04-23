@@ -9,11 +9,11 @@ body {
 
 /* --- 1. Header & Navigation --- */
 .header {
-    position: absolute; /* Floats over the hero section */
+    position: absolute;
     top: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between; /* Logo left, Menu right */
+    justify-content: space-between;
     align-items: center;
     padding: 30px 10%;
     background: transparent;
@@ -25,7 +25,7 @@ body {
     display: flex;
     align-items: center;
     text-decoration: none;
-    gap: 10px; /* Space between icon and bold text */
+    gap: 10px;
 }
 
 .logo-icon {
@@ -35,7 +35,7 @@ body {
 
 .logo-text {
     color: #ffffff;
-    font-weight: bold; /* This makes "SmileSchool" bold */
+    font-weight: bold; /* "SmileSchool" is bold */
     font-size: 20px;
     letter-spacing: -0.5px;
 }
@@ -48,14 +48,14 @@ body {
     font-size: 12px;
 }
 
-/* --- 2. Hero Section (Banner) --- */
+/* --- 2. Hero Section (Lighter Background) --- */
 .hero {
-    /* Dark background + Radial Gradient Overlay */
-    background: radial-gradient(circle, transparent 0%, #0b0d17 100%), 
+    /* Using rgba alpha 0.4 to make the background pic_1.png lighter */
+    background: radial-gradient(circle, transparent 0%, rgba(11, 13, 23, 0.4) 100%), 
                 url('images/pic_1.png') no-repeat center center/cover;
     min-height: 100vh;
     display: flex;
-    flex-direction: column; /* Stacks title, keywords, button */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -63,14 +63,12 @@ body {
     box-sizing: border-box;
 }
 
-/* Large bold centered heading */
 .hero h1 {
     font-size: 80px;
     font-weight: bold;
     margin: 0;
 }
 
-/* Keywords in a horizontal row */
 .keywords {
     display: flex;
     gap: 40px;
@@ -78,55 +76,67 @@ body {
     font-weight: bold;
 }
 
-/* Purple rounded button */
 .btn-primary {
     background-color: #C271FF;
     color: white;
     padding: 15px 35px;
-    border-radius: 30px; /* Fully rounded */
+    border-radius: 30px;
     border: none;
     font-weight: bold;
     cursor: pointer;
     margin: 30px 0;
 }
 
-/* "Learn from the pros" style */
 .pros-title {
     font-size: 20px;
     margin-top: 50px;
 }
 
 .purple-text {
-    color: #C271FF; /* "Learn" in purple */
+    color: #C271FF;
 }
 
-/* --- 3. Circular Profile Grid --- */
+/* --- 3. Profile Grid (Adapted with your 1009px .box logic) --- */
 .pros-grid {
     display: flex;
-    justify-content: center; /* Aligns profiles horizontally */
-    gap: 60px;
-    margin-top: 40px;
+    /* Aligns first and last cards to the 1009px borders */
+    justify-content: space-between; 
+    max-width: 1009px; 
     width: 100%;
+    margin: 40px auto 0 auto;
 }
 
 .pro-card {
-    max-width: 180px;
+    /* Exact percentage width from your .box .pro logic */
+    width: 14.87%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .pro-card img {
     width: 150px;
     height: 150px;
-    border-radius: 50%; /* Circular images */
+    border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .pro-card h3 {
-    font-weight: bold; /* Bold names */
-    margin: 10px 0 5px;
+    /* Source Sans Pro-Black / 900 weight from your snippet */
+    font-weight: 900; 
+    font-size: 18px;
+    line-height: 27px;
+    margin: 0;
+    text-align: center;
 }
 
 .pro-card p {
-    font-style: italic; /* Italic descriptions */
-    font-size: 14px;
+    /* Source Sans Pro-Italic / 400 weight from your snippet */
+    font-weight: 400;
+    font-style: italic; 
+    font-size: 16px;
+    line-height: 24px;
+    margin: 5px 0 0 0;
+    text-align: center;
 }
