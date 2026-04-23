@@ -1,20 +1,21 @@
-/* Ensure your background matches the dark theme */
+/* Base Styles */
 body {
     margin: 0;
-    background-color: #0b0d17;
+    padding: 0;
     font-family: 'Source Sans Pro', sans-serif;
+    background-color: #0b0d17;
+    color: white;
 }
 
-/* 1. Header: Transparent and Absolute */
+/* 1. Header: Transparent & Positioned at the top */
 .header {
     position: absolute;
     top: 0;
-    left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 10%; /* Increase padding for correct alignment */
+    padding: 30px 10%; /* Adjusts Logo/Nav spacing from edges */
     background: transparent;
     box-sizing: border-box;
     z-index: 10;
@@ -22,7 +23,7 @@ body {
 
 .menu {
     display: flex;
-    gap: 50px; /* Space out links more */
+    gap: 40px;
 }
 
 .menu a {
@@ -32,57 +33,56 @@ body {
     font-size: 12px;
 }
 
-/* 2. Hero Section: Radial Gradient + Full Height */
+/* 2. Hero Section: Radial Gradient & Background */
 .hero {
-    /* The radial gradient must fade to the background color #0b0d17 */
+    /* Gradient fades to #0b0d17 as required */
     background: radial-gradient(circle, transparent 0%, #0b0d17 100%), 
-                url('images/pic_1.jpg') no-repeat center center/cover;
-    min-height: 800px; /* Use a fixed min-height for test consistency */
+                url('images/pic_1.png') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
 }
 
 .hero h1 {
-    font-size: 100px; /* 'Get schooled' is very large in the shot */
-    font-weight: 900;
+    font-size: 80px; /* Large and Bold */
+    font-weight: bold;
     margin: 0;
 }
 
 .keywords {
     display: flex;
-    gap: 40px;
+    gap: 30px;
     margin: 20px 0;
     font-weight: bold;
 }
 
-/* 3. Button: Rounded and Specific Purple */
+/* 3. Button: Purple & Rounded */
 .btn-primary {
-    background-color: #C271FF;
+    background-color: #C271FF; /* Exact purple hex */
     color: white;
-    padding: 15px 40px;
-    border-radius: 40px;
+    padding: 15px 35px;
+    border-radius: 40px; /* Rounded pill shape */
     border: none;
     font-weight: bold;
-    margin: 40px 0;
+    margin: 30px 0;
     cursor: pointer;
     text-transform: uppercase;
 }
 
+/* "Learn from the pros" with 'Learn' in purple */
 .purple-text {
-    color: #C271FF; /* "Learn" in purple */
+    color: #C271FF;
 }
 
-/* 4. Profiles: Circular and Aligned */
+/* 4. Pros Section: Circular Profiles */
 .pros-grid {
     display: flex;
     justify-content: center;
-    gap: 80px;
-    margin-top: 50px;
+    gap: 50px;
+    margin-top: 40px;
 }
 
 .pro-card img {
@@ -90,7 +90,7 @@ body {
     height: 150px;
     border-radius: 50%; /* Circle shape */
     object-fit: cover;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .pro-card h3 {
@@ -101,5 +101,4 @@ body {
 .pro-card p {
     font-style: italic; /* Italic description */
     font-size: 14px;
-    margin-top: 5px;
 }
