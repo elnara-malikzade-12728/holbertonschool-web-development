@@ -21,9 +21,23 @@ body {
     z-index: 10;
 }
 
-.logo {
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px; /* Space between icon and bold text */
+}
+
+.logo-icon {
     height: 30px;
     width: auto;
+}
+
+.logo-text {
+    color: #ffffff;
+    font-weight: bold; /* This makes "SmileSchool" bold */
+    font-size: 20px;
+    letter-spacing: -0.5px;
 }
 
 .menu a {
