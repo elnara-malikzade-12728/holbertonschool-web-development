@@ -38,7 +38,7 @@ body {
 .hero {
     /* Dark background + Radial Gradient Overlay */
     background: radial-gradient(circle, transparent 0%, #0b0d17 100%), 
-                url('images/pic_1.jpg') no-repeat center center/cover;
+                url('images/pic_1.png') no-repeat center center/cover;
     min-height: 100vh;
     display: flex;
     flex-direction: column; /* Stacks title, keywords, button */
