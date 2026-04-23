@@ -1,0 +1,81 @@
+.box {
+    width: 1103.41px;
+    height: 29.46px;
+}
+
+.box .header {
+    position: fixed;
+    top: 35.02px;
+    left: 171.59px;
+    width: 1103.41px;
+    height: 29.46px;
+    display: flex;
+    gap: 702.4px;
+    background-color: transparent;
+}
+
+.box .logo {
+    width: 167.02px;
+    height: 29.46px;
+}
+
+.box .menu {
+    margin-top: 2px;
+    width: 234px;
+    height: 15px;
+    position: relative;
+}
+
+.box .courses {
+    position: absolute;
+    width: 21.37%;
+    top: calc(50.00% - 8px);
+    left : 0;
+    font-family: "Source Sans Pro-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.box .pricing {
+    position: absolute;
+    width: 19.23%;
+    top: calc(50.00% - 8px);
+    left: 43.59%;
+    font-family: "Source Sans Pro-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.box .login {
+    position: absolute;
+    width: 14.53%;
+    top: calc(50.00% - 8px);
+    left: 85.47%;
+    font-family: "Source Sans Pro-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.box .header > a {
+  display: inline-flex;
+  align-items: center;
+}
+
+.box .menu a {
+  display: inline-block;
+  color: #ffffff;
+}
+
+.box .menu a:focus-visible {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
