@@ -1,4 +1,4 @@
-/* Base Styles */
+/* --- Global Styles --- */
 body {
     margin: 0;
     padding: 0;
@@ -7,98 +7,112 @@ body {
     color: white;
 }
 
-/* 1. Header: Transparent & Positioned at the top */
+/* --- 1. Header & Navigation --- */
 .header {
-    position: absolute;
+    position: absolute; /* Floats over the hero section */
     top: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Logo left, Menu right */
     align-items: center;
-    padding: 30px 10%; /* Adjusts Logo/Nav spacing from edges */
+    padding: 30px 10%;
     background: transparent;
     box-sizing: border-box;
     z-index: 10;
 }
 
-.menu {
-    display: flex;
-    gap: 40px;
+.logo {
+    height: 30px;
+    width: auto;
 }
 
 .menu a {
     color: #ffffff;
     font-weight: bold;
     text-decoration: none;
+    margin-left: 40px;
     font-size: 12px;
 }
 
-/* 2. Hero Section: Radial Gradient & Background */
+/* --- 2. Hero Section (Banner) --- */
 .hero {
-    /* Gradient fades to #0b0d17 as required */
+    /* Dark background + Radial Gradient Overlay */
     background: radial-gradient(circle, transparent 0%, #0b0d17 100%), 
-                url('images/pic_1.png') no-repeat center center/cover;
-    height: 100vh;
+                url('images/pic_1.jpg') no-repeat center center/cover;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stacks title, keywords, button */
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 100px 20px;
+    box-sizing: border-box;
 }
 
+/* Large bold centered heading */
 .hero h1 {
-    font-size: 80px; /* Large and Bold */
+    font-size: 80px;
     font-weight: bold;
     margin: 0;
 }
 
+/* Keywords in a horizontal row */
 .keywords {
     display: flex;
-    gap: 30px;
+    gap: 40px;
     margin: 20px 0;
     font-weight: bold;
 }
 
-/* 3. Button: Purple & Rounded */
+/* Purple rounded button */
 .btn-primary {
-    background-color: #C271FF; /* Exact purple hex */
+    background-color: #C271FF;
     color: white;
     padding: 15px 35px;
-    border-radius: 40px; /* Rounded pill shape */
+    border-radius: 30px; /* Fully rounded */
     border: none;
     font-weight: bold;
-    margin: 30px 0;
     cursor: pointer;
-    text-transform: uppercase;
+    margin: 30px 0;
 }
 
-/* "Learn from the pros" with 'Learn' in purple */
+/* "Learn from the pros" style */
+.pros-title {
+    font-size: 20px;
+    margin-top: 50px;
+}
+
 .purple-text {
-    color: #C271FF;
+    color: #C271FF; /* "Learn" in purple */
 }
 
-/* 4. Pros Section: Circular Profiles */
+/* --- 3. Circular Profile Grid --- */
 .pros-grid {
     display: flex;
-    justify-content: center;
-    gap: 50px;
+    justify-content: center; /* Aligns profiles horizontally */
+    gap: 60px;
     margin-top: 40px;
+    width: 100%;
+}
+
+.pro-card {
+    max-width: 180px;
 }
 
 .pro-card img {
     width: 150px;
     height: 150px;
-    border-radius: 50%; /* Circle shape */
+    border-radius: 50%; /* Circular images */
     object-fit: cover;
     margin-bottom: 15px;
 }
 
 .pro-card h3 {
-    font-weight: bold;
-    margin: 0;
+    font-weight: bold; /* Bold names */
+    margin: 10px 0 5px;
 }
 
 .pro-card p {
-    font-style: italic; /* Italic description */
+    font-style: italic; /* Italic descriptions */
     font-size: 14px;
 }
