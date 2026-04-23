@@ -1,81 +1,74 @@
-.box {
-    width: 1103.41px;
-    height: 29.46px;
+/* General Resets */
+body { margin: 0; font-family: 'Source Sans Pro', sans-serif; background-color: #0b0d17; color: white; }
+
+.container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+
+/* 1. Transparent Nav at top */
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 30px 0;
+    background: transparent;
+    z-index: 10;
 }
 
-.box .header {
-    position: fixed;
-    top: 35.02px;
-    left: 171.59px;
-    width: 1103.41px;
-    height: 29.46px;
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 40px;
+    font-size: 12px;
+}
+
+/* 2. Hero with Radial Gradient Overlay */
+.hero {
+    background: radial-gradient(circle, transparent 0%, #0b0d17 100%), 
+                url('images/pic_1.jpg') no-repeat center center/cover;
+    min-height: 100vh;
     display: flex;
-    gap: 702.4px;
-    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 100px;
 }
 
-.box .logo {
-    width: 167.02px;
-    height: 29.46px;
+.hero h1 { font-size: 80px; margin: 0; font-weight: bold; }
+
+.keywords { display: flex; justify-content: center; gap: 40px; margin: 20px 0; font-weight: bold; }
+
+/* 3. Purple Rounded Button */
+.btn-primary {
+    background-color: #C271FF;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+    cursor: pointer;
+    margin: 30px 0;
 }
 
-.box .menu {
-    margin-top: 2px;
-    width: 234px;
-    height: 15px;
-    position: relative;
+.purple-text { color: #C271FF; }
+
+.pros-title { font-size: 24px; margin-top: 50px; }
+
+/* 4. Pros Grid (Circular Images) */
+.pros-grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 40px;
 }
 
-.box .courses {
-    position: absolute;
-    width: 21.37%;
-    top: calc(50.00% - 8px);
-    left : 0;
-    font-family: "Source Sans Pro-Bold", Helvetica;
-    font-weight: 700;
-    color: #ffffff;
-    font-size: 12px;
-    letter-spacing: 0;
-    line-height: normal;
+.pro-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover;
 }
 
-.box .pricing {
-    position: absolute;
-    width: 19.23%;
-    top: calc(50.00% - 8px);
-    left: 43.59%;
-    font-family: "Source Sans Pro-Bold", Helvetica;
-    font-weight: 700;
-    color: #ffffff;
-    font-size: 12px;
-    letter-spacing: 0;
-    line-height: normal;
-}
+.pro-card h3 { font-weight: bold; margin: 15px 0 5px; }
 
-.box .login {
-    position: absolute;
-    width: 14.53%;
-    top: calc(50.00% - 8px);
-    left: 85.47%;
-    font-family: "Source Sans Pro-Bold", Helvetica;
-    font-weight: 700;
-    color: #ffffff;
-    font-size: 12px;
-    letter-spacing: 0;
-    line-height: normal;
-}
-
-.box .header > a {
-  display: inline-flex;
-  align-items: center;
-}
-
-.box .menu a {
-  display: inline-block;
-  color: #ffffff;
-}
-
-.box .menu a:focus-visible {
-  outline: 2px solid #4a90e2;
-  outline-offset: 2px;
-}
+.pro-card p { font-style: italic; font-size: 14px; opacity: 0.8; }
