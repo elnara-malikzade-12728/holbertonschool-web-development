@@ -443,8 +443,8 @@
   .post-meta-list [class^='post-meta-'] {
     margin-bottom: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 0.2rem solid;
-    color: var(--color-light-grey);
+    border-bottom: 0.2rem solid var(--color-light-grey);
+    
   }
   .post-meta-list [class^='post-meta']:last-child {
     border: none;
@@ -463,7 +463,7 @@
   .tag-list li::after {
     content: ", ";
   }
-  .tag-list li::after:last-child {
+  .tag-list li:last-child::after {
     content: "";
   }
 
