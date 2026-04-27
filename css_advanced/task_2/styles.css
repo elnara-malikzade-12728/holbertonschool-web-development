@@ -211,13 +211,14 @@ body {
 .popular {
     padding: 80px 10%;
     text-align: center;
-    background-color: #0b0d17;
+    background-color: white;
 }
 
 .popular h2 {
     font-size: 36px;
     font-weight: 400;
     margin: 0 0 50px 0;
+    color: grey;
 }
 
 .video-grid {
@@ -232,7 +233,7 @@ body {
 .video-card {
     width: 255px;
     text-align: left;
-    background-color: #0b0d17;
+    background-color: white;
 }
 
 .video-card > img {
@@ -246,6 +247,7 @@ body {
     font-size: 16px;
     font-weight: 700;
     margin: 14px 0 8px 0;
+    color: black;
 }
 
 .video-card > p {
