@@ -440,12 +440,14 @@
     text-transform: uppercase;
     display: block;
 }
-.post-meta-list [class="post-meta-"] {
-    border-bottom: 0.2rem solid var(--color-light-grey);
+.post-meta-list [class^="post-meta-"] {
+    padding-bottom: 1rem;
     margin-bottom: 1rem;
+    border-bottom: 0.2rem solid var(--color-light-grey);
+    
 }
 
-.post-meta-list [class="post-meta-"]:last-child {
+.post-meta-list [class^="post-meta-"]:last-child {
     border-bottom: none;
     margin-bottom: 3rem;
 }
