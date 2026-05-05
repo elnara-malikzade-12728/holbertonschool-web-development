@@ -144,9 +144,7 @@
     font-size: var(--button-font-size);
     color: var(--button-color);
     text-decoration: var(--button-text-decoration);
-    cursor: pointer;Target all a tags inside .card-work .card-title class:
-
-    Property: padding, Value: 2rem 1rem 0 1rem
+    cursor: pointer;
   }
 
   .button:hover {
@@ -440,6 +438,10 @@
   @media (max-width: 767px) {
     :root {
       --footer-padding: 5rem 2rem 1rem;
+    }
+
+    footer {
+      padding: var(--footer-padding);
     }
 
     .footer .social.nav,
