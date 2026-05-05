@@ -294,10 +294,10 @@
 
   /* menu btn */
   .header .menu-btn {
-    display: block;
+    display: none;
   }
   
-  #menu-btn:checked + .navbar-menu {
+  #menu-btn:checked ~ .navbar-menu {
     display: block;
   }
 
