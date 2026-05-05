@@ -395,9 +395,11 @@
   }
   /* Section Latest news
       ============================= */
+  @media (max-width: 767px){
 
-  .section-latest-news .row {
+    .section-latest-news .row {
     flex-direction: row-reverse;
+    }
   }
 
   /* Section SERVICES
