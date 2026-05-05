@@ -291,14 +291,14 @@
     align-items: center;
   }
 
-  .menu-icon .header {
+  .header .menu-icon {
     cursor: pointer;
     padding: 2.5rem;
     position: relative;
     user-select: none;
   }
 
-  .navicon .menu-icon .header {
+  .header .menu-icon .navicon  {
     background: var(--color-white);
     display: block;
     width: 2rem;
@@ -307,8 +307,8 @@
     transition: background .2s ease-out;
   }
 
-  .navicon::before .menu-icon .header,
-  .navicon::after .menu-icon .header {
+  .header .menu-icon .navicon::before,
+  .header .menu-icon .navicon::after {
     content: "";
     display: block;
     width: 100%;
@@ -318,11 +318,11 @@
     transition: all .2s ease-out;
   }
 
-  .navicon::before .menu-icon .header{
+  .header .menu-icon .navicon::before {
     top: .7rem;
   }
 
-  .navicon::after .menu-icon .header{
+  .header .menu-icon .navicon::after {
     top: -.7rem;
   }
 
