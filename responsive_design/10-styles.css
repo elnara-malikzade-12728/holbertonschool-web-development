@@ -310,11 +310,11 @@
     display: block;
   }
   
-  #menu-btn:checked + .navbar-menu {
+  .menu-btn:checked ~ .navbar-menu {
     display: block;
   }
 
-  #menu-btn:checked + .navbar-menu .nav {
+  .menu-btn:checked ~ .navbar-menu .nav {
     max-height: 100%;
     overflow: inherit;
   }
