@@ -297,7 +297,7 @@
     display: none;
   }
   
-  #menu-btn:checked ~ .navbar-menu {
+  .menu-btn:checked ~ .navbar-menu {
     display: block;
   }
 
