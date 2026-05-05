@@ -398,10 +398,10 @@
   @media (max-width: 767px){
 
     .section-latest-news .row {
-    flex-direction: row-reverse;
+    flex-direction: column;
     }
   }
-  
+
 
   /* Section SERVICES
       ============================= */
