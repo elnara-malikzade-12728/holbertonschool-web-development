@@ -21,28 +21,41 @@ body {
     background: transparent;
     box-sizing: border-box;
     z-index: 100;
+    font-size: 1.2vw;
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+    gap: 1rem; /* Adds even spacing between navigation words */
+    align-items: right;
+}
+
+/* Individual link styling */
+.navbar a {
+    text-decoration: none;
+    color: inherit; /* Inherits text color from parent element */
 }
 
 .logo-link {
     display: flex;
-    align-items: center;
+    align-items: right;
     text-decoration: none;
-    gap: 1vw;
+    gap: 2vw;
 }
 
-.logo-icon {
+header a .logo-icon {
     /* Logo shrinks proportionally */
     height: 3vw; 
     min-height: 20px;
     width: auto;
 }
 
-.logo-text {
-    color: #ffffff;
-    font-weight: bold;
-    /* Text shrinks proportionally */
-    font-size: 2vw; 
-    min-font-size: 14px;
+header a .logo-text {
+    /* Set height to scale proportionally with the viewport */
+    height: 1.5vw; 
+    min-height: 12px;
+    width: auto;
 }
 
 .menu a {
@@ -56,8 +69,7 @@ body {
 /* --- HERO SECTION: PDF-Style Scaling --- */
 .hero {
     /* Layers: 1. Gradient Overlay | 2. Scaling Photo */
-    background: radial-gradient(circle, transparent 0%, rgba(11, 13, 23, 0.5) 100%), 
-                url('images/pic_1.png') no-repeat;
+    background: url('images/pic_1.png') no-repeat;
     
     /* 100% width auto height ensures the photo scales like a PDF page */
     background-size: 100% auto; 
@@ -85,28 +97,29 @@ body {
 
 .keywords {
     display: flex;
-    gap: 3vw;
-    margin: 2vw 0;
+    gap: 4vw;
     font-weight: bold;
-    font-size: 1.5vw;
+    font-size: 1vw;
 }
 
 .btn-primary {
     background-color: #C271FF;
     color: white;
-    padding: 1.5vw 4vw;
+    padding: 1vw 1vw;
     border-radius: 5vw;
     border: none;
     font-weight: bold;
     cursor: pointer;
     margin: 2vw 0;
-    font-size: 1.2vw;
+    font-size: 1vw;
     text-transform: uppercase;
+    margin-bottom: 30px;
 }
 
 .purple-text {
     color: #C271FF;
     font-weight: bold; /* Bold "Learn" as requested */
+    margin-bottom: 40px;
 }
 
 /* --- PROFILES: PDF-Style Scaling --- */
@@ -114,7 +127,7 @@ body {
     display: flex;
     justify-content: space-between; 
     max-width: 1009px; 
-    width: 80%; /* Box scales with the viewport */
+    width: 70%; /* Box scales with the viewport */
     margin: 5vw auto 0 auto;
     margin-bottom: 40px;
 }
