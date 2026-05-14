@@ -21,7 +21,7 @@ body {
     background: transparent;
     box-sizing: border-box;
     z-index: 100;
-    font-size: 1.2vw;
+    font-size: 0.8vw;
     font-weight: bold;
 }
 
@@ -44,17 +44,27 @@ body {
     gap: 2vw;
 }
 
+/* Apply to individual profile images and logo icons */
+.pro-card img, 
+.logo-icon, 
+.logo-text {
+    image-rendering: -webkit-optimize-contrast; /* Safari crisp rendering */
+    image-rendering: crisp-edges;               /* Standard modern browser crispness */
+    transform: translateZ(0);                    /* Triggers GPU hardware acceleration */
+    backface-visibility: hidden;                 /* Eliminates sub-pixel blur during scale */
+}
+
 header a .logo-icon {
     /* Logo shrinks proportionally */
-    height: 3vw; 
-    min-height: 20px;
+    height: 2vw; 
+    min-height: 15px;
     width: auto;
 }
 
 header a .logo-text {
     /* Set height to scale proportionally with the viewport */
-    height: 1.5vw; 
-    min-height: 12px;
+    height: 1vw; 
+    min-height: 6px;
     width: auto;
 }
 
@@ -68,24 +78,27 @@ header a .logo-text {
 
 /* --- HERO SECTION: PDF-Style Scaling --- */
 .hero {
+    width: 100vw;
+    /* Sets the precise aspect ratio matching your pic_1.png layout dimensions */
+    aspect-ratio: 1009 / 661; 
     /* Layers: 1. Gradient Overlay | 2. Scaling Photo */
     background: url('images/pic_1.png') no-repeat;
     
-    /* 100% width auto height ensures the photo scales like a PDF page */
-    background-size: 100% auto; 
+    background-size: 100% 100%; /* Force background to match container boundaries perfectly */
     background-position: top center;
     
-    /* Hero grows with the image height */
-    min-height: 100vh;
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    /* Adjust padding-top to keep text relative to the person's face */
-    padding-top: 15vw; 
+    
+    /* Percentages based on container height/width to scale layout contents proportionally */
+    padding-top: 14vw; 
+    padding-bottom: 2vw;
     box-sizing: border-box;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .hero h1 {
@@ -113,7 +126,7 @@ header a .logo-text {
     margin: 2vw 0;
     font-size: 1vw;
     text-transform: uppercase;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .purple-text {
@@ -142,7 +155,7 @@ header a .logo-text {
 
 .pro-card img {
     /* Image scales proportionally to its 14.87% container */
-    width: 100%; 
+    width: 90%; 
     height: auto;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
