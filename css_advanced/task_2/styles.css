@@ -82,7 +82,8 @@ header a .logo-text {
     /* Sets the precise aspect ratio matching your pic_1.png layout dimensions */
     aspect-ratio: 1009 / 661; 
     /* Layers: 1. Gradient Overlay | 2. Scaling Photo */
-    background: url('images/pic_1.png') no-repeat;
+    background: radial-gradient(circle 600px at top center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.85) 100%),
+        url('images/pic_1.png') no-repeat top center / cover;
     
     background-size: 100% 100%; /* Force background to match container boundaries perfectly */
     background-position: top center;
