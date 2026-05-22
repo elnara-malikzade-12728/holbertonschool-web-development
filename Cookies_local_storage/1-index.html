@@ -17,8 +17,8 @@
     <button type="button" onclick="showCookies()">Show the cookies</button>
     <script>
         function setCookies(){
-            document.cookie = 'firstname=John';
-            document.cookie = 'email=john@example.com';
+            document.cookie = 'firstname=John; expires=31 May 2026';
+            document.cookie = 'email=john@example.com; expires=31 May 2026 12:00:00 UTC';
         }
         function showCookies(){
             const p = document.createElement('p');
