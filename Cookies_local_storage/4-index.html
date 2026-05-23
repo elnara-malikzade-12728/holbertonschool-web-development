@@ -24,45 +24,34 @@
         <form>
             <input type="text" id="firstname" placeholder="Firstname">
             <input type="text" id="email" placeholder="Email">
-            <button type="button" onclick="setCookies()">Log me in</button>
+            <button type="button" onclick="setCookiesAndShowWelcomeMessage()">Log me in</button>
         </form>
     </div>
     <br>
     <br>
     <p>When a user is logged in the page should look like the image below</p>
     <hr style="height: 2px; border: none; background-color: black;">
-    
+
+    <script src="https://jsdelivr.net" ></script>
     <script>
         window.onload = function(){
             showWelcomeMessageOrForm();
         }
         
-        function setCookies(){
-            const firstname = document.getElementById('firstname').value;
-            const email = document.getElementById('email').value;
-            const date = new Date();
-            date.setTime(date.getTime() + (10*24*60*60*1000));
-            const expires = "expires=" + date.toUTCString();
-            document.cookie = 'firstname=' + firstname + ';' + expires + '; path=/;';
-            document.cookie = 'email=' + email + ';' + expires + '; path=/;';
-
+        function setCookiesAndShowWelcomeMessage(){
+            const firstname = document.getElementById('firstnam').value;
+            const email = documen.getElementById('email').value;
+            Cookies.set('firstname', firstname, {expires: 10, path: '/'});
+            Cookies.set('email', email, {expires: 10, path: '/'});
             showWelcomeMessageOrForm();
         }
 
-        function getCookie(name){
-            if (document.cookie === ''){
-                return ;
-            }
-            return document.cookie.split(';').map(cookie => cookie.trim()).find(cookie => cookie.startsWith(name + '='))?.split('=')[1];
-        }
 
         function showForm(){
-            // FIXED: Standardized the lookup string ID to 'welcome-msg'
             const welcomeMsg = document.getElementById('welcome-msg');
             if (welcomeMsg){
                 welcomeMsg.remove();
             }
-            // FIXED: Swapped to querySelector to find the exact class container safely
             const form = document.querySelector('.login-form-container');
             form.style.display = 'block';
         }
@@ -73,13 +62,13 @@
         }
 
         function deleteCookiesAndShowForm(){
-            document.cookie = 'firstname=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-            document.cookie = 'email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            Cookies.remove('firstname', { path: '/' });
+            Cookies.remove('email', { path: '/' });
             showForm();
         }
 
         function showWelcomeMessageOrForm(){
-            const firstname = getCookie('firstname');
+            const firstname = Cookies.get('firstname');
             
             const existingMsg = document.getElementById('welcome-msg');
             if (existingMsg) {
@@ -91,7 +80,6 @@
                 
                 const h1 = document.createElement('h1');
                 h1.id = 'welcome-msg'; 
-                h1.textContent = `Welcome ${firstname}`;
 
                 const logout = document.createElement('a');
                 logout.className = 'logout-link';
@@ -109,3 +97,4 @@
     </script>
 </body>
 </html>
+
