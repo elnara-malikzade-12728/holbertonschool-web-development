@@ -32,15 +32,15 @@
     <p>When a user is logged in the page should look like the image below</p>
     <hr style="height: 2px; border: none; background-color: black;">
 
-    <script src="https://jsdelivr.net" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script>
         window.onload = function(){
             showWelcomeMessageOrForm();
         }
         
         function setCookiesAndShowWelcomeMessage(){
-            const firstname = document.getElementById('firstnam').value;
-            const email = documen.getElementById('email').value;
+            const firstname = document.getElementById('firstname').value;
+            const email = document.getElementById('email').value;
             Cookies.set('firstname', firstname, {expires: 10, path: '/'});
             Cookies.set('email', email, {expires: 10, path: '/'});
             showWelcomeMessageOrForm();
@@ -80,6 +80,7 @@
                 
                 const h1 = document.createElement('h1');
                 h1.id = 'welcome-msg'; 
+                 h1.textContent = `Welcome ${firstname}`;
 
                 const logout = document.createElement('a');
                 logout.className = 'logout-link';
