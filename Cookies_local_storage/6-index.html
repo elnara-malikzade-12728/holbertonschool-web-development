@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local storage</title>
+    <title>Session storage</title>
 </head>
 <body>
 
@@ -11,7 +11,7 @@
         const availableItems = ['Shampoo', 'Soap', 'Sponge', 'Water'];
         
         function addItemToCart(item){
-            localStorage.setItem(item, 'true');
+            sessionStorage.setItem(item, 'true');
             displayCart();
         }
 
@@ -34,7 +34,7 @@
             if (oldCart) {
                 oldCart.remove();
             }
-           const savedItems = availableItems.filter(item => localStorage.getItem(item) === 'true');
+           const savedItems = availableItems.filter(item => sessionStorage.getItem(item) === 'true');
 
             if (savedItems.length === 0) return;
                 const p = document.createElement('p');
@@ -46,18 +46,18 @@
         function showWelcomeMessageOrForm() {
             console.log("Welcome to the store!");
         }
-        function isLocalStorageAvailable(){
+        function isSessionStorageAvailable(){
             try {
                 const testKey = '__test__';
-                localStorage.setItem(testKey, testKey);
-                localStorage.removeItem(testKey);
+                sessionStorage.setItem(testKey, testKey);
+                sessionStorage.removeItem(testKey);
                 return true;
             }catch (error){
                 return false;
             }
         }
         function init(){
-            if (!isLocalStorageAvailable()) {
+            if (!isSessionStorageAvailable()) {
             alert('Sorry, your browser does not support Web storage. Try again with a better one');
             } else {
             showWelcomeMessageOrForm();
@@ -71,6 +71,7 @@
     </script>
 </body>
 </html>
+
 
 
 
