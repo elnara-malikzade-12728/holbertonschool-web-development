@@ -94,12 +94,11 @@
                     
                     li.textContent = `${item} x ${qty} `;
                     
-                    const removeBtn = document.createElement('button');
-                    removeBtn.textContent = '(remove)';
-                    removeBtn.style.marginLeft = '5px';
-                    removeBtn.onclick = () => removeItemFromCart(item); 
+                    const remove = document.createElement('span');
+                    remove.textContent = '(remove)';
+                    remove.onclick = () => removeItemFromCart(item); 
                     
-                    li.appendChild(removeBtn);
+                    li.appendChild(remove);
                     ul.appendChild(li);
                 });
             }
