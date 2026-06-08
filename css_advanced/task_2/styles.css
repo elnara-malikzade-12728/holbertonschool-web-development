@@ -5,10 +5,10 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     background-color: #0b0d17;
     color: white;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
-/* --- Header & Transparent Navigation --- */
+/* --- Navigation Header --- */
 .header {
     position: absolute;
     top: 0;
@@ -17,7 +17,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10%; 
+    padding: 30px 10%;
     background: transparent;
     box-sizing: border-box;
     z-index: 100;
@@ -31,7 +31,7 @@ body {
 }
 
 .logo-icon {
-    height: 30px; 
+    height: 30px;
     width: auto;
 }
 
@@ -42,8 +42,7 @@ body {
 
 .navbar {
     display: flex;
-    gap: 30px; 
-    align-items: center;
+    gap: 30px;
 }
 
 .navbar a {
@@ -52,83 +51,82 @@ body {
     font-weight: bold;
     font-size: 14px;
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
-/* --- Updated Hero Section Layout --- */
+/* --- Hero Section & Radial Overlay --- */
 .hero {
     width: 100%;
-    min-height: 100vh;
-    /* This creates the exact vibrant center glow that fades out to the edges */
+    padding: 180px 10% 80px 10%;
+    box-sizing: border-box;
+    /* Generates precise central glow effect overlay matching target snapshots */
     background: radial-gradient(circle at center, rgba(34, 46, 74, 0.1) 0%, rgba(11, 13, 23, 0.95) 75%),
                 url('images/pic_1.png') no-repeat center top;
     background-size: cover;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     text-align: center;
-    /* Increased top padding pushes the structure down exactly like the mockup */
-    padding: 180px 10% 80px 10%; 
-    box-sizing: border-box;
 }
 
-/* --- Typography Adjustments --- */
 .hero h1 {
-    font-size: 5.5rem; /* Slightly larger size */
-    font-weight: 900;  /* Extra bold weight matching the reference image */
-    margin: 0 0 5px 0;
-    letter-spacing: -1px;
+    font-size: 5.5rem;
+    font-weight: 900;
+    margin: 0 0 10px 0;
 }
 
 .keywords {
     display: flex;
-    gap: 30px;
+    gap: 40px;
     font-weight: bold;
     font-size: 12px;
-    margin-bottom: 35px;
+    margin-bottom: 40px;
     letter-spacing: 1px;
 }
 
 .btn-primary {
     background-color: #C271FF;
     color: white;
-    padding: 12px 30px; /* Snugger padding matching reference design */
-    border-radius: 25px; 
+    padding: 12px 30px;
+    border-radius: 25px;
     border: none;
     font-weight: bold;
     cursor: pointer;
     font-size: 13px;
     text-transform: uppercase;
-    margin-bottom: 75px; /* Creates the space above the subtitle */
+    margin-bottom: 75px;
 }
 
-.pros-title {
-    font-size: 1.8rem;
+h2.pros-title {
+    font-size: 2rem;
     font-weight: 300;
-    margin-bottom: 60px; /* Distinct gap before the profile circles */
+    margin: 0 0 60px 0;
 }
 
-/* --- Profiles Rows Adjustments --- */
+.purple-text {
+    color: #C271FF;
+    font-weight: bold;
+}
+
+/* --- Profiles Rows --- */
 .pros-grid {
     display: flex;
-    justify-content: center; /* Keeps everything centered beautifully */
+    justify-content: center;
     width: 100%;
-    max-width: 950px; 
+    max-width: 1000px;
     margin: 0 auto;
-    gap: 40px; /* Optimized gap */
+    gap: 40px;
 }
 
 .pro-card {
     flex: 1;
-    max-width: 160px;
+    max-width: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .pro-card img {
-    width: 130px; /* Scaled down slightly to perfectly match image proportions */
+    width: 130px;
     height: 130px;
     border-radius: 50%;
     object-fit: cover;
@@ -136,19 +134,20 @@ body {
 }
 
 .pro-card h3 {
-    font-weight: bold; 
-    font-size: 1.15rem; 
+    font-weight: bold;
+    font-size: 1.2rem;
     margin: 5px 0;
 }
 
 .pro-card p {
     font-weight: normal;
-    font-style: italic; 
-    font-size: 0.85rem; /* Slightly cleaner subtext */
+    font-style: italic;
+    font-size: 0.9rem;
     color: #ffffff;
     opacity: 0.9;
-    margin: 3px 0 0 0;
+    margin: 5px 0 0 0;
     line-height: 1.4;
+    text-align: center;
 }
 
 /* --- Quotes Section --- */
