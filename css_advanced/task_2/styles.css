@@ -424,6 +424,8 @@ header a .logo-text {
     margin: 0;
 }
 
+
+
 /* --- FOOTER --- */
 .footer {
     background-color: #071629;
@@ -431,24 +433,14 @@ header a .logo-text {
     text-align: center;
 }
 
-.footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    max-width: 1200px;
-    margin: 0 auto 20px auto;
-}
 
-.footer-top .logo {
-    height: 35px;
-    width: auto;
-}
 
 .socials {
     display: flex;
-    gap: 16px;
-    align-items: center;
+    gap: 0px;
+    justify-content: right;
+    align-items: right;
+    
 }
 
 .socials a img {
@@ -457,6 +449,9 @@ header a .logo-text {
     filter: brightness(0) invert(1);
     opacity: 0.8;
     transition: opacity 0.2s;
+    margin-top: -30px;
+    margin-bottom: 30px;
+    margin-right: 20px;
 }
 
 .socials a:hover img {
@@ -469,3 +464,24 @@ header a .logo-text {
     margin: 20px 0 0 0;
     text-align: center;
 }
+
+.logo {
+    margin-top: 50px;
+    display: flex;
+    align-items: left;
+}
+.logo .logo-icon {
+    height: 2vw; 
+    min-height: 10px;
+    width: auto;
+    margin-right: 1vw; /* Adds spacing between the logo icon and text */
+  
+}
+.logo .logo-text {
+    margin-top: 0.5vw; /* Adjusts vertical alignment of the text with the icon */
+    height: 0.9vw; 
+    min-height: 2px;
+    width: auto;
+    
+}
+
