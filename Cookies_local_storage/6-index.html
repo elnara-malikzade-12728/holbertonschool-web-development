@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session storage</title>
+</head>
+<body>
+
+    <script>
+        const availableItems = ['Shampoo', 'Soap', 'Sponge', 'Water'];
+        
+        function addItemToCart(item){
+            sessionStorage.setItem(item, 'true');
+            displayCart();
+        }
+
+        function createStore(){
+            const ul = document.createElement('ul');
+            availableItems.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                ul.appendChild(li);
+                const button = document.createElement('button');
+                button.textContent = 'Add to cart';
+                button.onclick = () => addItemToCart(item);
+                li.appendChild(button);
+            });
+            document.body.appendChild(ul);
+        }
+
+        function displayCart(){
+            const oldCart = document.getElementById('cart');
+            if (oldCart) {
+                oldCart.remove();
+            }
+           const savedItems = availableItems.filter(item => sessionStorage.getItem(item) === 'true');
+
+            if (savedItems.length === 0) return;
+                const p = document.createElement('p');
+                p.textContent = `You previously added ${savedItems.length} items in your cart.`;
+                document.body.appendChild(p);
+        }
+        
+
+        function showWelcomeMessageOrForm() {
+            console.log("Welcome to the store!");
+        }
+        function isSessionStorageAvailable(){
+            try {
+                const testKey = '__test__';
+                sessionStorage.setItem(testKey, testKey);
+                sessionStorage.removeItem(testKey);
+                return true;
+            }catch (error){
+                return false;
+            }
+        }
+        function init(){
+            if (!isSessionStorageAvailable()) {
+            alert('Sorry, your browser does not support Web storage. Try again with a better one');
+            } else {
+            showWelcomeMessageOrForm();
+            createStore();
+            displayCart();
+            }
+        } 
+        
+        window.onload = init;
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

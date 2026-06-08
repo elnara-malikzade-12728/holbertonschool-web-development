@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies and Local Storage</title>
+</head>
+<body>
+    <h1>Login to the website</h1>
+    <br>
+    <form>
+        <input type="text" id="firstname" placeholder="Firstname">
+        <input type="text" id="email" placeholder="Email">
+        <button type="button" onclick="setCookies()">Log me in</button>
+    </form>
+    <h1>Cookies</h1>
+    <button type="button" onclick="showCookies()">Show the cookies</button>
+    <script>
+        function setCookies(){
+            const firstname = document.getElementById('firstname').value;
+            const email = document.getElementById('email').value;
+            const date = new Date();
+            date.setTime(date.getTime() + (10*24*60*60*1000));
+            const expires = "expires=" + date.toUTCString();
+            document.cookie = 'firstname=' + firstname + ' ;' + expires;
+            document.cookie = 'email=' + email + ' ;' + expires;
+
+        }
+        function getCookie(name){
+            if (document.cookie === ''){
+                return;
+            }
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++){
+                const[cookieName, cookieValue] = cookies[i].trim().split('=');
+                if (cookieName === name){
+                    return cookieValue;
+                }
+            }
+            return;
+
+            //return document.cookie.split(';').map(cookie => cookie.trim()).find(cookie => cookie.startsWith(name + '='))?.split('=')[1];
+        }
+        function showCookies(){
+            const p = document.createElement('p');
+            const email = getCookie('email');
+            const firstname = getCookie('firstname');
+            p.innerHTML = 'Email: ' + email + ' - Firstname: ' + firstname;
+            document.body.appendChild(p);
+        }
+    </script>
+
+    
+</body>
+</html>
