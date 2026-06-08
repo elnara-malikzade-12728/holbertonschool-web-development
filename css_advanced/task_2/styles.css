@@ -155,48 +155,72 @@ body {
     text-align: center;
 }
 
-/* --- Following Page Layout Sections --- */
+/* --- QUOTES SECTION --- */
 .quotes {
+    /* Purple background for the entire section */
     background-color: #C271FF;
     padding: 80px 10%;
+    
+    /* Content horizontally centered within the section */
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .quote-content {
     display: flex;
+    flex-direction: row; /* Forces layout side-by-side alignment */
     align-items: center;
-    gap: 50px;
+    gap: 50px; /* Space between the left image and right text content */
     max-width: 850px;
+    width: 100%;
 }
 
-.quote-content img {
+.quote-content > img {
+    /* Dimensions and constraints */
     width: 140px;
     height: 140px;
+    /* Circular profile image on the left side */
     border-radius: 50%;
     object-fit: cover;
+    flex-shrink: 0; /* Keeps the circle perfect on smaller viewports */
+}
+
+.quote-text {
+    display: flex;
+    flex-direction: column; /* Stacks quote text, author, and subtitle vertically */
+    text-align: left; /* Keeps text flow natural relative to the left image pointer */
 }
 
 .quote-text blockquote {
+    /* Blockquote text in white on the right side */
+    color: #ffffff;
     font-size: 1.4rem;
     font-style: italic;
     line-height: 1.6;
     margin: 0 0 15px 0;
+    padding: 0;
 }
 
 .quote-text .author {
+    /* Bold author name in white below the quote */
+    color: #ffffff;
     font-size: 1.1rem;
     font-weight: bold;
-    margin: 0;
+    margin: 0 0 5px 0;
 }
 
 .quote-text .author-sub {
+    /* Italic subtitle in white below the author name */
+    color: #ffffff;
     font-size: 0.95rem;
     font-style: italic;
-    margin: 5px 0 0 0;
-    opacity: 0.85;
+    margin: 0;
+    opacity: 0.9; /* Subtle text depth adjustment while keeping it white */
 }
+
 
 .popular {
     padding: 80px 10%;
