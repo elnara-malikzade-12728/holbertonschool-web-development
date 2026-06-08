@@ -1,23 +1,26 @@
-/* --- Global Styles --- */
+/* --- Global Resets & Layout Locks --- */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Source Sans Pro', sans-serif;
     background-color: #0b0d17;
     color: white;
+    /* Lock the base execution page width to match the Figma canvas width */
+    min-width: 1440px; 
     overflow-x: hidden;
 }
 
-/* --- Navigation Header --- */
+/* --- Fixed Transparent Navigation --- */
 .header {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 1440px; /* Locked to the main part width */
+    height: 100px; /* Standard design header height */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10%;
+    padding: 0 10%; /* Provides the explicit left-to-right alignment margins */
     background: transparent;
     box-sizing: border-box;
     z-index: 100;
@@ -42,7 +45,7 @@ body {
 
 .navbar {
     display: flex;
-    gap: 30px;
+    gap: 40px;
 }
 
 .navbar a {
@@ -53,53 +56,60 @@ body {
     text-transform: uppercase;
 }
 
-/* --- Hero Section & Radial Overlay --- */
+/* --- Fixed Hero Container --- */
 .hero {
-    width: 100%;
-    padding: 180px 10% 80px 10%;
+    position: absolute;
+    width: 1440px;  /* Matches Figma 'main_part' width */
+    height: 1093px; /* Matches Figma 'main_part' height */
+    left: 0px;
+    top: 0px;
     box-sizing: border-box;
-    /* Generates precise central glow effect overlay matching target snapshots */
-    background: radial-gradient(circle at center, rgba(34, 46, 74, 0.1) 0%, rgba(11, 13, 23, 0.95) 75%),
+    
+    /* Radial Gradient and Photo layers combined */
+    background: radial-gradient(circle at center, rgba(34, 46, 74, 0.1) 0%, rgba(11, 13, 23, 0.95) 70%),
                 url('images/pic_1.png') no-repeat center top;
     background-size: cover;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-top: 250px; /* Pushes content down nicely inside the 1093px height box */
 }
 
 .hero h1 {
-    font-size: 5.5rem;
+    font-size: 6rem;
     font-weight: 900;
     margin: 0 0 10px 0;
+    letter-spacing: -2px;
 }
 
 .keywords {
     display: flex;
     gap: 40px;
     font-weight: bold;
-    font-size: 12px;
-    margin-bottom: 40px;
+    font-size: 14px;
+    margin-bottom: 45px;
     letter-spacing: 1px;
 }
 
 .btn-primary {
     background-color: #C271FF;
     color: white;
-    padding: 12px 30px;
+    padding: 14px 35px;
     border-radius: 25px;
     border: none;
     font-weight: bold;
     cursor: pointer;
     font-size: 13px;
     text-transform: uppercase;
-    margin-bottom: 75px;
+    margin-bottom: 120px; /* Replicates the vertical gap before the subtitle */
 }
 
 h2.pros-title {
     font-size: 2rem;
     font-weight: 300;
-    margin: 0 0 60px 0;
+    margin: 0 0 70px 0;
 }
 
 .purple-text {
@@ -107,14 +117,14 @@ h2.pros-title {
     font-weight: bold;
 }
 
-/* --- Profiles Rows --- */
+/* --- Profile Row Elements --- */
 .pros-grid {
     display: flex;
     justify-content: center;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
-    gap: 40px;
+    gap: 50px;
 }
 
 .pro-card {
@@ -126,16 +136,16 @@ h2.pros-title {
 }
 
 .pro-card img {
-    width: 130px;
-    height: 130px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .pro-card h3 {
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     margin: 5px 0;
 }
 
@@ -144,14 +154,15 @@ h2.pros-title {
     font-style: italic;
     font-size: 0.9rem;
     color: #ffffff;
-    opacity: 0.9;
+    opacity: 0.85;
     margin: 5px 0 0 0;
     line-height: 1.4;
     text-align: center;
 }
 
-/* --- Quotes Section --- */
+/* --- Subsequent Flow Sections --- */
 .quotes {
+    margin-top: 1093px; /* Pushes the quotes section down below the absolute container */
     background-color: #C271FF;
     padding: 80px 10%;
     display: flex;
