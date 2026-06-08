@@ -397,7 +397,7 @@ body {
 
 .faq h2 {
     font-size: 36px;
-    font-weight: 400;
+    font-weight: 300;
     margin: 0 0 60px 0;
     color: #071629;
 }
@@ -421,7 +421,8 @@ body {
 .faq-item p {
     font-size: 14px;
     font-weight: 400;
-    color: #555;
+    color: rgb(10, 10, 10);
+    opacity: 0.5;
     line-height: 1.6;
     margin: 0;
 }
