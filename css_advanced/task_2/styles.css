@@ -1,26 +1,24 @@
-/* --- Global Resets & Layout Locks --- */
+/* --- Global Styles --- */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Source Sans Pro', sans-serif;
     background-color: #0b0d17;
     color: white;
-    /* Lock the base execution page width to match the Figma canvas width */
-    min-width: 1440px; 
     overflow-x: hidden;
 }
 
-/* --- Fixed Transparent Navigation --- */
+/* --- Transparent Navigation Bar --- */
 .header {
-    position: absolute;
+    position: absolute; /* Keeps it overlaying the hero background */
     top: 0;
     left: 0;
-    width: 1440px; /* Locked to the main part width */
-    height: 100px; /* Standard design header height */
+    width: 100%;
+    max-width: 1440px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10%; /* Provides the explicit left-to-right alignment margins */
+    padding: 30px 10%; 
     background: transparent;
     box-sizing: border-box;
     z-index: 100;
@@ -34,7 +32,7 @@ body {
 }
 
 .logo-icon {
-    height: 30px;
+    height: 30px; 
     width: auto;
 }
 
@@ -45,86 +43,83 @@ body {
 
 .navbar {
     display: flex;
-    gap: 40px;
+    gap: 40px; 
+    align-items: center;
 }
 
 .navbar a {
     text-decoration: none;
-    color: #ffffff;
+    color: #ffffff; 
     font-weight: bold;
     font-size: 14px;
     text-transform: uppercase;
 }
 
-/* --- Fixed Hero Container --- */
+/* --- Hero Section Fix (Relative Flow) --- */
 .hero {
-    position: absolute;
-    width: 1440px;  /* Matches Figma 'main_part' width */
-    height: 1093px; /* Matches Figma 'main_part' height */
-    left: 0px;
-    top: 0px;
-    box-sizing: border-box;
-    
-    /* Radial Gradient and Photo layers combined */
-    background: radial-gradient(circle at center, rgba(34, 46, 74, 0.1) 0%, rgba(11, 13, 23, 0.95) 70%),
+    position: relative; /* Changing this to relative prevents sub-sections from breaking */
+    width: 100%;
+    max-width: 1440px;
+    min-height: 1093px; /* Retains your exact Figma height rule safely */
+    background: radial-gradient(circle at center, rgba(34, 46, 74, 0.1) 0%, rgba(11, 13, 23, 0.95) 75%),
                 url('images/pic_1.png') no-repeat center top;
     background-size: cover;
-    
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
-    padding-top: 250px; /* Pushes content down nicely inside the 1093px height box */
+    padding: 180px 10% 80px 10%;
+    box-sizing: border-box;
 }
 
 .hero h1 {
-    font-size: 6rem;
+    font-size: 5.5rem; 
     font-weight: 900;
     margin: 0 0 10px 0;
-    letter-spacing: -2px;
 }
 
 .keywords {
     display: flex;
     gap: 40px;
     font-weight: bold;
-    font-size: 14px;
-    margin-bottom: 45px;
+    font-size: 12px;
+    margin-bottom: 40px;
     letter-spacing: 1px;
 }
 
 .btn-primary {
     background-color: #C271FF;
     color: white;
-    padding: 14px 35px;
-    border-radius: 25px;
+    padding: 12px 30px;
+    border-radius: 25px; 
     border: none;
     font-weight: bold;
     cursor: pointer;
     font-size: 13px;
     text-transform: uppercase;
-    margin-bottom: 120px; /* Replicates the vertical gap before the subtitle */
+    margin-bottom: 75px;
 }
 
-h2.pros-title {
+.pros-title {
     font-size: 2rem;
     font-weight: 300;
-    margin: 0 0 70px 0;
+    margin: 0 0 60px 0;
 }
 
 .purple-text {
     color: #C271FF;
-    font-weight: bold;
+    font-weight: bold; 
 }
 
-/* --- Profile Row Elements --- */
+/* --- Profile Row Grid --- */
 .pros-grid {
     display: flex;
-    justify-content: center;
+    justify-content: center; 
     width: 100%;
-    max-width: 1100px;
+    max-width: 1000px; 
     margin: 0 auto;
-    gap: 50px;
+    gap: 40px;
 }
 
 .pro-card {
@@ -136,33 +131,32 @@ h2.pros-title {
 }
 
 .pro-card img {
-    width: 140px;
-    height: 140px;
+    width: 130px; 
+    height: 130px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .pro-card h3 {
-    font-weight: bold;
-    font-size: 1.25rem;
+    font-weight: bold; 
+    font-size: 1.2rem; 
     margin: 5px 0;
 }
 
 .pro-card p {
     font-weight: normal;
-    font-style: italic;
+    font-style: italic; 
     font-size: 0.9rem;
     color: #ffffff;
-    opacity: 0.85;
+    opacity: 0.9;
     margin: 5px 0 0 0;
     line-height: 1.4;
     text-align: center;
 }
 
-/* --- Subsequent Flow Sections --- */
+/* --- Following Page Layout Sections --- */
 .quotes {
-    margin-top: 1093px; /* Pushes the quotes section down below the absolute container */
     background-color: #C271FF;
     padding: 80px 10%;
     display: flex;
@@ -204,7 +198,6 @@ h2.pros-title {
     opacity: 0.85;
 }
 
-/* --- Popular Videos Layout --- */
 .popular {
     padding: 80px 10%;
     background-color: #0b0d17;
