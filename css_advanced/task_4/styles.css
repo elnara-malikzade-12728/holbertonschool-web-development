@@ -211,6 +211,45 @@ body {
     margin-bottom: 60px;
 }
 
+/* --- Centered Semi-Transparent Play Button Overlay --- */
+.video-thumbnail {
+    position: relative; /* Act as the anchor for the absolute play button */
+    width: 100%;
+    margin-bottom: 20px;
+    display: block;
+    overflow: hidden;
+}
+
+.video-thumbnail > img:not(.video-play) {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+}
+
+.video-play {
+    position: absolute;
+    /* Perfect absolute center alignment over the portrait face images */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* Maintains the required layout touch/hit boundary dimensions */
+    width: 64px;
+    height: 64px;
+    
+    /* CRITICAL FIX: Forces the white circular element background to be completely transparent */
+    background-color: transparent; 
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    
+    border-radius: 50%;
+    /* Keeps the small purple triangle vector centered and un-stretched inside the transparent 64px ring */
+    object-fit: none; 
+    z-index: 10;
+}
+
+
 .video-grid {
     display: flex;
     justify-content: space-between;
