@@ -5,193 +5,156 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     background-color: #0b0d17;
     color: white;
-    /* Prevent scrollbars during the PDF-style scaling */
     overflow-x: hidden; 
 }
 
+/* --- Header & Transparent Navigation --- */
 .header {
     position: absolute;
     top: 0;
+    left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Padding scales with screen width */
-    padding: 2vw 10%; 
+    padding: 30px 10%; 
     background: transparent;
     box-sizing: border-box;
     z-index: 100;
-    font-size: 0.7vw;
-    font-weight: bold;
-}
-
-.navbar {
-    display: flex;
-    gap: 1rem; /* Adds even spacing between navigation words */
-    align-items: right;
-}
-
-/* Individual link styling */
-.navbar a {
-    text-decoration: none;
-    color: inherit; /* Inherits text color from parent element */
 }
 
 .logo-link {
     display: flex;
-    align-items: right;
+    align-items: center;
     text-decoration: none;
-    gap: 2vw;
+    gap: 15px;
 }
 
-/* Apply to individual profile images and logo icons */
-.pro-card img, 
-.logo-icon, 
+.logo-icon {
+    height: 30px; 
+    width: auto;
+}
+
 .logo-text {
-    image-rendering: -webkit-optimize-contrast; /* Safari crisp rendering */
-    transform: translateZ(0);                    /* Triggers GPU hardware acceleration */
-    backface-visibility: hidden;                 /* Eliminates sub-pixel blur during scale */
-}
-
-header a .logo-icon {
-    /* Logo shrinks proportionally */
-    height: 2vw; 
-    min-height: 10px;
+    height: 20px;
     width: auto;
 }
 
-header a .logo-text {
-    /* Set height to scale proportionally with the viewport */
-    height: 0.9vw; 
-    min-height: 2px;
-    width: auto;
+.navbar {
+    display: flex;
+    gap: 30px; 
+    align-items: center;
 }
 
-.menu a {
+.navbar a {
+    text-decoration: none;
     color: #ffffff;
     font-weight: bold;
-    text-decoration: none;
-    margin-left: 3vw;
-    font-size: 1.2vw;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* --- HERO SECTION: PDF-Style Scaling --- */
+/* --- Updated Hero Section Layout --- */
 .hero {
-    width: 100vw;
-    /* Sets the precise aspect ratio matching your pic_1.png layout dimensions */
-    aspect-ratio: 1009 / 661; 
-    /* Layers: 1. Gradient Overlay | 2. Scaling Photo */
-    background: radial-gradient(circle 600px at top center, rgba(0, 0, 0, 0) 0%, rgba(2, 21, 43, 0.85) 100%),
-        url('images/pic_1.png') no-repeat top center / cover;
-    
-    background-size: 100% 100%; /* Force background to match container boundaries perfectly */
-    background-position: top center;
-    
+    width: 100%;
+    min-height: 100vh;
+    /* This creates the exact vibrant center glow that fades out to the edges */
+    background: radial-gradient(circle at center, rgba(34, 46, 74, 0.1) 0%, rgba(11, 13, 23, 0.95) 75%),
+                url('images/pic_1.png') no-repeat center top;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    
-    /* Percentages based on container height/width to scale layout contents proportionally */
-    padding-top: 14vw; 
-    padding-bottom: 2vw;
+    /* Increased top padding pushes the structure down exactly like the mockup */
+    padding: 180px 10% 80px 10%; 
     box-sizing: border-box;
-    transform: translateZ(0);
-    backface-visibility: hidden;
 }
 
+/* --- Typography Adjustments --- */
 .hero h1 {
-    /* Font size locked to 8% of screen width */
-    font-size: 8vw; 
-    font-weight: bold;
-    margin: 0;
+    font-size: 5.5rem; /* Slightly larger size */
+    font-weight: 900;  /* Extra bold weight matching the reference image */
+    margin: 0 0 5px 0;
+    letter-spacing: -1px;
 }
 
 .keywords {
     display: flex;
-    gap: 4vw;
+    gap: 30px;
     font-weight: bold;
-    font-size: 1vw;
+    font-size: 12px;
+    margin-bottom: 35px;
+    letter-spacing: 1px;
 }
 
 .btn-primary {
     background-color: #C271FF;
     color: white;
-    padding: 1vw 1vw;
-    border-radius: 5vw;
+    padding: 12px 30px; /* Snugger padding matching reference design */
+    border-radius: 25px; 
     border: none;
     font-weight: bold;
     cursor: pointer;
-    margin: 2vw 0;
-    font-size: 1vw;
+    font-size: 13px;
     text-transform: uppercase;
-    margin-bottom: 40px;
+    margin-bottom: 75px; /* Creates the space above the subtitle */
 }
 
-.purple-text {
-    color: #C271FF;
-    font-weight: bold; /* Bold "Learn" as requested */
-    margin-bottom: 40px;
+.pros-title {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 60px; /* Distinct gap before the profile circles */
 }
 
-/* --- PROFILES: PDF-Style Scaling --- */
+/* --- Profiles Rows Adjustments --- */
 .pros-grid {
     display: flex;
-    justify-content: space-between; 
-    max-width: 1009px; 
-    width: 70%; /* Box scales with the viewport */
-    margin: 5vw auto 0 auto;
-    margin-bottom: 40px;
+    justify-content: center; /* Keeps everything centered beautifully */
+    width: 100%;
+    max-width: 950px; 
+    margin: 0 auto;
+    gap: 40px; /* Optimized gap */
 }
 
 .pro-card {
-    /* Cards remain 14.87% of the scaling container */
-    width: 14.87%; 
+    flex: 1;
+    max-width: 160px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .pro-card img {
-    /* Image scales proportionally to its 14.87% container */
-    width: 90%; 
-    height: auto;
-    aspect-ratio: 1 / 1;
+    width: 130px; /* Scaled down slightly to perfectly match image proportions */
+    height: 130px;
     border-radius: 50%;
     object-fit: cover;
+    margin-bottom: 20px;
 }
 
 .pro-card h3 {
-    font-weight: 900; 
-    /* Font scales with viewport to avoid wrapping */
-    font-size: 1.5vw; 
-    margin: 1vw 0 0 0;
-    text-align: center;
-    white-space: nowrap; 
+    font-weight: bold; 
+    font-size: 1.15rem; 
+    margin: 5px 0;
 }
 
 .pro-card p {
-    font-weight: 400;
+    font-weight: normal;
     font-style: italic; 
-    /* Font scales with viewport to avoid wrapping */
-    font-size: 1.1vw;
+    font-size: 0.85rem; /* Slightly cleaner subtext */
+    color: #ffffff;
+    opacity: 0.9;
+    margin: 3px 0 0 0;
     line-height: 1.4;
-    margin: 0.5vw 0 0 0;
-    white-space: nowrap;
-    text-align: center;
 }
 
-.pros-title {
-    font-size: 2vw;
-    margin-top: 6vw;
-    font-weight: 400;
-}
-
-/* --- QUOTES SECTION --- */
+/* --- Quotes Section --- */
 .quotes {
     background-color: #C271FF;
-    padding: 60px 10%;
+    padding: 80px 10%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -200,96 +163,90 @@ header a .logo-text {
 .quote-content {
     display: flex;
     align-items: center;
-    gap: 40px;
-    max-width: 900px;
+    gap: 50px;
+    max-width: 850px;
 }
 
-.quote-content > img {
-    width: 160px;
-    height: 160px;
+.quote-content img {
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     object-fit: cover;
-    flex-shrink: 0;
 }
 
 .quote-text blockquote {
-    font-size: 18px;
+    font-size: 1.4rem;
     font-style: italic;
-    font-weight: 400;
     line-height: 1.6;
-    margin: 0 0 12px 0;
-    padding: 0;
+    margin: 0 0 15px 0;
 }
 
 .quote-text .author {
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 1.1rem;
+    font-weight: bold;
     margin: 0;
 }
 
 .quote-text .author-sub {
-    font-size: 14px;
+    font-size: 0.95rem;
     font-style: italic;
-    font-weight: 400;
-    margin: 4px 0 0 0;
+    margin: 5px 0 0 0;
+    opacity: 0.85;
 }
 
-/* --- POPULAR TUTORIALS SECTION --- */
+/* --- Popular Videos Layout --- */
 .popular {
     padding: 80px 10%;
+    background-color: #0b0d17;
     text-align: center;
-    background-color: white;
 }
 
 .popular h2 {
-    font-size: 36px;
-    font-weight: 400;
-    margin: 0 0 50px 0;
-    color: grey;
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 60px;
 }
 
 .video-grid {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    max-width: 1200px;
+    justify-content: space-between;
+    max-width: 1050px;
     margin: 0 auto;
+    gap: 25px;
 }
 
 .video-card {
-    width: 255px;
+    flex: 1;
     text-align: left;
-    background-color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 .video-card > img {
     width: 100%;
-    height: 160px;
-    object-fit: cover;
+    height: auto;
     border-radius: 4px;
+    margin-bottom: 15px;
 }
 
 .video-card h3 {
-    font-size: 16px;
-    font-weight: 700;
-    margin: 14px 0 8px 0;
-    color: black;
+    font-size: 1.2rem;
+    margin: 0 0 10px 0;
+    font-weight: bold;
 }
 
 .video-card > p {
-    font-size: 14px;
-    font-weight: 400;
-    color: #999;
+    font-size: 0.9rem;
+    color: #a0aec0;
+    margin: 0 0 15px 0;
     line-height: 1.5;
-    margin: 0 0 12px 0;
 }
 
 .video-author {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .video-author img {
@@ -300,27 +257,29 @@ header a .logo-text {
 }
 
 .video-author p {
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 0.95rem;
     color: #C271FF;
+    font-weight: bold;
     margin: 0;
 }
 
 .rating {
     display: flex;
     align-items: center;
-    gap: 4px;
+    justify-content: space-between;
+    margin-top: auto;
 }
 
 .rating img {
-    width: 14px;
-    height: 14px;
+    width: 15px;
+    height: 15px;
+    margin-right: 2px;
 }
 
 .rating span {
-    font-size: 13px;
+    font-size: 0.9rem;
     color: #C271FF;
-    font-weight: 700;
+    font-weight: bold;
     margin-left: auto;
 }
 
