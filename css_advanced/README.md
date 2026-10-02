@@ -1,5 +1,9 @@
 # SmileSchool — CSS advanced
 
+[Existing GitHub Pages site](https://elnara-malikzade-12728.github.io/)
+
+The live site is maintained in the separate `elnara-malikzade-12728.github.io` repository.
+
 This project implements the SmileSchool design using semantic HTML and plain CSS.
 It includes a hero with instructor profiles, a testimonial, tutorial cards, membership benefits, frequently asked questions, and a footer.
 The layout adapts to smaller screens and uses local images and fonts without external frameworks.
